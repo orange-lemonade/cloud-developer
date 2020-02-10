@@ -32,3 +32,11 @@ export async function deleteLocalFiles(files:Array<string>){
         fs.unlinkSync(file);
     }
 }
+
+// checkValidUrl
+// helper function to check if a string is a valid URL
+export function checkValidUrl(url: string) : boolean{
+    const urlRegex = new RegExp('^(https?|ftp)://.*(jpeg|jpg|png|gif|bmp)');
+    return urlRegex.test(url);
+};
+
